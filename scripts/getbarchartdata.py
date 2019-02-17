@@ -54,8 +54,12 @@ for country, rou, play in zip(c_list, r_list, p_list):
 # f = open("../data/Countries/test.json", "a")
 # f.write(json.dumps(countries["IND"]))
 
-country_unique_list = list(set(c_list))
+# country_unique_list = list(set(c_list))
+# f = open("../data/countrylist.json", "a")
+# json_data = json.dumps(country_unique_list)
+# f.write(json_data)
 
 for country in country_unique_list:
-    f = open("../data/Countries/"+country+".json","a")
-    f.write(json.dumps(countries[country]))
+    f = open("../data/Countries/" + country + ".json", "a")
+    sorted_country = sorted(countries[country].items(), key=operator.itemgetter(1), reverse=True)
+    f.write(json.dumps(sorted_country))
