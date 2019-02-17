@@ -38,27 +38,7 @@ for country, rou in zip(c_list, r_list):
 
     countries[country] = countries.get(country, 0) + points
 
-# sorted_x = sorted(countries.items(), key=operator.itemgetter(1), reverse=1)
-
-f = open("jsondata.json", "a")
+f = open("bubbledata.json", "a")
 
 for t in countries.items():
      f.write(json.dumps({"Name":t[0], "Count":t[1]}) + ",\n")
-
-
-# print sorted_x
-
-# for c in one:
-#       points = 0
-#       countries[c] = countries.get(c, 0) + 1
-
-# for keys in countries:
-    # tup = {"Name":keys, "Count": countries[keys]}
-    # print json.dumps(tup) + ","
-    # sorted(tup, key = 'Count')
-    # items = sorted(tup.iteritems(), key=lambda x: x[1].Count, reverse=True)
-    # print items
-    
-# tup = sorted(tup, key = itemgetter('Count'), reverse=True)
-# print tup
-# 

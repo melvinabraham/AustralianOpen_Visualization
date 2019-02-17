@@ -55,12 +55,12 @@
                 ]
         };
 
-        var diameter = 600;
+        var diameter = 650;
         var color = d3.scaleOrdinal(d3.schemeCategory20);
 
         var bubble = d3.pack(dataset)
             .size([diameter, diameter])
-            .padding(1.5);
+            .padding(1.5)
 
         var svg = d3.select("body")
             .append("svg")
@@ -98,7 +98,10 @@
             })
             .style("fill", function(d,i) {
                 return color(i);
-            });
+            })
+            .on("click", function(d) {
+        alert("on click");
+    });
 
         node.append("text")
             .attr("dy", ".2em")
@@ -123,6 +126,14 @@
                 return d.r/3;
             })
             .attr("fill", "white");
+        
+        // node.on('mouseover', function(d, i) {
+        //     circles.transition()
+        //       .duration(1000)
+        //       .ease(d3.easeBounce)
+        //       .attr("r", 32)
+        //       .style("fill", "orange");
+
 
         d3.select(self.frameElement)
             .style("height", diameter + "px");
