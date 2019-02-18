@@ -2,7 +2,15 @@
 
 This is a visualization of the Australian Open between 2009 - 2014 using HTML5, CSS3, JavaScript, d3.js and Python.
 
-## How to Run
+## Deployment
+
+https://melvinabraham.github.io/AustralianOpen_Visualization/
+
+This webpage is deployed on Github pages [Refer Acknowledments]
+
+
+
+## Testing
 
 Clone/Download from the repository [Australian Open](https://github.com/melvinabraham/AustralianOpen_Visualization).
 
@@ -16,3 +24,4 @@ On Chrome, go to localhost:port , where port is the specified port number in the
 ## Acknowledgments
 
 [An excellent resource to create d3 pie charts easily](http://d3pie.org/).
+[Github Pages](https://pages.github.com/).
