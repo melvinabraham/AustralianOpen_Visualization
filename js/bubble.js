@@ -1,4 +1,5 @@
-        dataset = {
+      
+      dataset = {
             "children": 
             [
             {"Count": 268, "Name": "USA"},
@@ -100,7 +101,10 @@
                 return color(i);
             })
             .on("click", function(d) {
-        alert("on click");
+                // console.log()
+                
+                buildpiechart(d.data.Name);
+                
     });
 
         node.append("text")
