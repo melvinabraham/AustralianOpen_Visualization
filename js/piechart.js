@@ -1,18 +1,18 @@
 function buildpiechart(countryname) {
 
     d3.select("#pieChart").html("")
-    // d3.select("body")
-    .append("pieChart")
-    d3.json("../data/Countries/"+countryname+".json", function (error, data) {
+        // d3.select("body")
+        .append("pieChart")
+    d3.json("../data/Countries/" + countryname + ".json", function (error, data) {
         var array = []
-        var json_content = {"content": array};
-        for(var i = 0; i < data.length; ++i) {
+        var json_content = { "content": array };
+        for (var i = 0; i < data.length; ++i) {
             var name = data[i][0];
             var score = data[i][1];
-            var color = '#'+(0x1000000+(Math.random())*0xffffff).toString(16).substr(1,6);
-            json_content.content.push({"label":name, "value": score, "color":color});
+            var color = '#' + (0x1000000 + (Math.random()) * 0xffffff).toString(16).substr(1, 6);
+            json_content.content.push({ "label": name, "value": score, "color": color });
         }
-    
+
         var pie = new d3pie("pieChart", {
             "header": {
                 "title": {
@@ -21,7 +21,7 @@ function buildpiechart(countryname) {
                     "font": "verdana"
                 },
                 "subtitle": {
-                    "text": "Performance of every player per country",
+                    "text": "Performance of every player in " + countryname,
                     "color": "#999999",
                     "fontSize": 10,
                     "font": "verdana"
@@ -76,6 +76,6 @@ function buildpiechart(countryname) {
                 }
             }
         });
-    
+
     });
 }
