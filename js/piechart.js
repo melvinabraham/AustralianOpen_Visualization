@@ -3,7 +3,7 @@ function buildpiechart(countryname) {
     d3.select("#pieChart").html("")
         // d3.select("body")
         .append("pieChart")
-    d3.json("../data/Countries/" + countryname + ".json", function (error, data) {
+    d3.json("https://raw.githubusercontent.com/melvinabraham/AustralianOpen_Visualization/master/data/Countries/" + countryname + ".json", function (error, data) {
         var array = []
         var json_content = { "content": array };
         for (var i = 0; i < data.length; ++i) {
