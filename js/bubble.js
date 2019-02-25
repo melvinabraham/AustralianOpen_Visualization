@@ -63,12 +63,17 @@ var bubble = d3.pack(dataset)
     .size([diameter, diameter])
     .padding(1.5)
 
+d3.select("body")
+    .append("h2")
+    .text("Points assigned per country")
+    .attr("align", "center");
+
 var svg = d3.select("body")
     .append("svg")
     .attr("width", diameter)
     .attr("height", diameter)
     .attr("class", "bubble");
-
+    
 var radius = function (r) {
     return r + 30;
 }
