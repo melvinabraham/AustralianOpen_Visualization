@@ -63,10 +63,10 @@ var bubble = d3.pack(dataset)
     .size([diameter, diameter])
     .padding(1.5)
 
-d3.select("body")
-    .append("h2")
-    .text("Points assigned per country")
-    .attr("align", "center");
+// d3.select("body")
+//     .append("h2")
+//     .text("Points assigned per country")
+//     .attr("align", "center");
 
 var svg = d3.select("body")
     .append("svg")
