@@ -1,6 +1,8 @@
 # Visualizing the highest performing countries and players of the Australian Open (2009 - 2014)
 
-This is a visualization of the Australian Open between 2009 - 2014 using HTML5, CSS3, JavaScript, d3.js and Python.
+This is a visualization of the Australian Open between 2009 - 2014 using HTML5, CSS3, JavaScript, d3.js, Bootstrap and Python.
+
+Python was used to clean, analyze and extract data from the [Dataset](https://github.com/melvinabraham/AustralianOpen_Visualization/blob/master/data/dataset.csv).
 
 ## Deployment
 
@@ -24,4 +26,5 @@ On Chrome, go to localhost:port , where port is the specified port number in the
 ## Acknowledgments
 
 [An excellent resource to create d3 pie charts easily](http://d3pie.org/).
+
 [Github Pages](https://pages.github.com/).
