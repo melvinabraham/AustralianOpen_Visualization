@@ -93,17 +93,35 @@ node.append("title")
         return d.Name + ": " + d.Count;
     });
 
+
+
 node.append("circle")
     .attr("r", function (d) {
         return d.r;
     })
     .style("fill", function (d, i) {
+        cur_color = color(i);
         return color(i);
     })
     .on("click", function (d) {
         buildpiechart(d.data.Name);
-
+    })
+    .on("mouseover", function (d) { 
+        // var rad = d.data.Count + 30;
+        // console.log(rad);
+        // rad = Math.min(rad, 83);
+        d3.select(this)
+        .attr('opacity', 0.5)
+        .attr('r', d.r * 1.2)
+        .style('opacity', 1)
+        // .style("fill", "#000000");
+    })
+    .on("mouseout", function (d, i) { mouseOff(d, i) }).on("mouseout", function (d, i) {
+        d3.select(this).style("fill", color(i))
+        .attr('r', d => d.r)
+        .attr('opacity', 1);;
     });
+
 
 node.append("text")
     .attr("dy", ".2em")
@@ -129,15 +147,6 @@ node.append("text")
     })
     .attr("fill", "white");
 
-// node.on('mouseover', function(d, i) {
-//     circles.transition()
-//       .duration(1000)
-//       .ease(d3.easeBounce)
-//       .attr("r", 32)
-//       .style("fill", "orange");
-
 
 d3.select(self.frameElement)
     .style("height", diameter + "px");
-
-
